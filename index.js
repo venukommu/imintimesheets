@@ -49,7 +49,8 @@ function main()
             name: _.get(name, 'Emp Name'),
             totalHours: 0,
             daysAdded: 0,
-            status: 'Existing Member'
+            status: 'Existing',
+            team: 'Match 4'
         })
         sheetNames.push(_.truncate(_.get(name, 'Emp Name'), 30));
         sheetData.push([]);
@@ -234,9 +235,16 @@ function getSchemaArray(summary) {
             width: 10,
         },
         {
-            column: 'New/ Existing member',
+            column: 'Status',
             type: String,
             value: data => _.get(data, 'status'),
+            borderColor: '#000000',
+            width: 20,
+        },
+        {
+            column: 'Team',
+            type: String,
+            value: data => _.get(data, 'team'),
             borderColor: '#000000',
             width: 20,
         },
